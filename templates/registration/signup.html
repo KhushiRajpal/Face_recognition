@@ -1,12 +1,48 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+ 
+  <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Sign Up #08</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="login-wrap">
+		      	<div class="img" style="background-image: url(images/bg.jpg);"></div>
+		      	<h3 class="text-center mb-4">Sign Up</h3>
+						<form method="post" action="#" class="signup-form">
+              {% csrf_token %}
+		      		<div class="form-group mb-3">
+		      			<label for="id_username">Username:</label><input type="text" class="form-control"  name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username" placeholder="John Doe"> <span class="helptext">Required. 
+		      		</div>
+		      		<div class="form-group mb-3">
+		      			<input type="text" class="form-control" placeholder="+91 - 1234567890">
+		      		</div>
+	            <div class="form-group mb-3">
+                <label for="id_password1">Password:</label> <input id="password-field" type="password" name="password1" autocomplete="new-password" required id="id_password1" class="form-control" placeholder="Password"><span class="helptext"><ul><li>Your password can’t be too similar to your other personal information.</li>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Continue</button>
+	            </div>
+	          </form>
+	          <p>I'm already a member! <a data-toggle="tab" href="accounts/login">Sign In</a></p>
+	        </div>
+				</div>
+			</div>
+		</div>
+    
+
+	<script src="{% static 'assets3/js/jquery.min.js' %}"></script>
+  <script src="{% static 'assets3/js/popper.js' %}"></script>
+  <script src="{% static 'assets3/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets3/js/main.js' %}"></script>
+</section>
 {% endblock %}
